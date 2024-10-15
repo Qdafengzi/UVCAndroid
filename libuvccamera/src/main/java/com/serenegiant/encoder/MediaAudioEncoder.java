@@ -36,7 +36,8 @@ import android.media.MediaFormat;
 import android.media.MediaRecorder;
 import android.util.Log;
 
-import com.serenegiant.uvccamera.BuildConfig;
+import com.herohan.uvcapp.BuildConfig;
+
 
 public class MediaAudioEncoder extends MediaEncoder implements IAudioEncoder {
     private static final boolean DEBUG = BuildConfig.DEBUG;    // TODO set false on release

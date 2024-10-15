@@ -6,7 +6,8 @@ import android.os.Looper;
 import android.util.AttributeSet;
 import android.view.SurfaceView;
 
-import com.serenegiant.uvccamera.BuildConfig;
+import com.herohan.uvcapp.BuildConfig;
+
 
 /**
  * change the view size with keeping the specified aspect ratio.

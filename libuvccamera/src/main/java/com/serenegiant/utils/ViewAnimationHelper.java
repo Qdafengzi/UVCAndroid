@@ -29,7 +29,8 @@ import android.os.Build;
 import android.util.Log;
 import android.view.View;
 
-import com.serenegiant.uvccamera.R;
+import com.herohan.uvcapp.R;
+
 
 public class ViewAnimationHelper {
     private static final String TAG = ViewAnimationHelper.class.getSimpleName();

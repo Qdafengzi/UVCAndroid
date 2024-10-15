@@ -28,8 +28,8 @@ public class SetFrameCallbackActivity extends AppCompatActivity implements View.
     private static final boolean DEBUG = true;
     private static final String TAG = SetFrameCallbackActivity.class.getSimpleName();
 
-    private static final int DEFAULT_WIDTH = 640;
-    private static final int DEFAULT_HEIGHT = 480;
+    private static final int DEFAULT_WIDTH = 3840;
+    private static final int DEFAULT_HEIGHT = 2880;
 
     private ICameraHelper mCameraHelper;
 
@@ -146,22 +146,49 @@ public class SetFrameCallbackActivity extends AppCompatActivity implements View.
             mCameraHelper.addSurface(mCameraViewMain.getHolder().getSurface(), false);
 
             mCameraHelper.setFrameCallback(frame -> {
+                Log.d(TAG,"数据来了");
+
                 if (mCustomFPS != null) {
                     //Refresh FPS
                     mCustomFPS.doFrame();
                 }
 
+//
                 byte[] nv21 = new byte[frame.remaining()];
                 frame.get(nv21, 0, nv21.length);
-
-                Bitmap bitmap = mNv21ToBitmap.nv21ToBitmap(nv21, size.width, size.height);
+//
+//                Bitmap bitmap = mNv21ToBitmap.nv21ToBitmap(nv21, size.width, size.height);
+                Bitmap bitmap = convertRGBXToBitmap(nv21,size.width,size.height);
                 runOnUiThread(() -> {
                     mFrameCallbackPreview.setImageBitmap(bitmap);
                 });
-            }, UVCCamera.PIXEL_FORMAT_NV21);
+            }, UVCCamera.PIXEL_FORMAT_RGBX);
 
             initFPS();
         }
+
+
+        public Bitmap convertRGBXToBitmap(byte[] rgbxData, int width, int height) {
+            // 每个像素四个字节：RGBX
+            int[] pixels = new int[width * height];
+
+            for (int i = 0; i < pixels.length; i++) {
+                int r = rgbxData[i * 4] & 0xFF;     // 红色通道
+                int g = rgbxData[i * 4 + 1] & 0xFF; // 绿色通道
+                int b = rgbxData[i * 4 + 2] & 0xFF; // 蓝色通道
+                // int x = rgbxData[i * 4 + 3] & 0xFF; // 未使用的字节
+
+                // 构建 ARGB 颜色，A（透明度）设为 255（不透明）
+                pixels[i] = 0xFF << 24 | (r << 16) | (g << 8) | b;
+            }
+
+            // 创建一个 Bitmap 对象
+            Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+            bitmap.setPixels(pixels, 0, width, 0, 0, width, height);
+
+            return bitmap;
+        }
+
 
         @Override
         public void onCameraClose(UsbDevice device) {

@@ -17,12 +17,12 @@ import android.util.SparseArray;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 
+import com.herohan.uvcapp.BuildConfig;
 import com.serenegiant.opengl.EGLBase;
 import com.serenegiant.opengl.EGLTask;
 import com.serenegiant.opengl.GLDrawer2D;
 import com.serenegiant.opengl.GLHelper;
 import com.serenegiant.utils.UVCUtils;
-import com.serenegiant.uvccamera.BuildConfig;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -32,7 +32,8 @@ import android.media.MediaFormat;
 import android.util.Log;
 import android.view.Surface;
 
-import com.serenegiant.uvccamera.BuildConfig;
+import com.herohan.uvcapp.BuildConfig;
+
 
 public class MediaSurfaceEncoder extends MediaEncoder implements IVideoEncoder {
     private static final boolean DEBUG = BuildConfig.DEBUG;    // TODO set false on release

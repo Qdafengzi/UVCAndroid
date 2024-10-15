@@ -38,8 +38,8 @@ import android.util.Log;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 
+import com.herohan.uvcapp.BuildConfig;
 import com.serenegiant.usb.USBMonitor.UsbControlBlock;
-import com.serenegiant.uvccamera.BuildConfig;
 
 public class UVCCamera {
     private static final boolean DEBUG = BuildConfig.DEBUG;    // TODO set false when releasing

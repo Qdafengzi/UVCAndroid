@@ -43,10 +43,10 @@ import android.widget.Button;
 import android.widget.CheckedTextView;
 import android.widget.Spinner;
 
+import com.herohan.uvcapp.R;
 import com.serenegiant.usb.DeviceFilter;
 import com.serenegiant.usb.USBMonitor;
 
-import com.serenegiant.uvccamera.R;
 
 public class CameraDialog extends DialogFragment {
     private static final String TAG = CameraDialog.class.getSimpleName();

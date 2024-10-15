@@ -32,7 +32,8 @@ import android.media.MediaCodecList;
 import android.media.MediaFormat;
 import android.util.Log;
 
-import com.serenegiant.uvccamera.BuildConfig;
+import com.herohan.uvcapp.BuildConfig;
+
 
 /**
  * This class receives video images as ByteBuffer(strongly recommend direct ByteBuffer) as NV21(YUV420SP)

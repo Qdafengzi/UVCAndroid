@@ -23,7 +23,6 @@
 
 package com.serenegiant.encoder;
 
-import static com.serenegiant.uvccamera.BuildConfig.DEBUG;
 
 import java.io.IOException;
 import java.lang.ref.WeakReference;
@@ -36,7 +35,8 @@ import android.os.Build;
 import android.util.Log;
 import android.view.Surface;
 
-import com.serenegiant.uvccamera.BuildConfig;
+import com.herohan.uvcapp.BuildConfig;
+
 
 public abstract class MediaEncoder extends Thread {
     private static final boolean DEBUG = BuildConfig.DEBUG;    // TODO set false on release

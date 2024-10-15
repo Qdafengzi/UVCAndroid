@@ -13,7 +13,6 @@ import com.serenegiant.opengl.GLDrawer2D;
 import com.serenegiant.opengl.renderer.MirrorMode;
 import com.serenegiant.opengl.renderer.RendererHolder;
 import com.serenegiant.opengl.renderer.RendererHolderCallback;
-import com.serenegiant.uvccamera.BuildConfig;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

@@ -31,9 +31,9 @@ import android.media.MediaCodecList;
 import android.media.MediaFormat;
 import android.util.Log;
 
+import com.herohan.uvcapp.BuildConfig;
 import com.serenegiant.opengl.EGLBase;
 import com.serenegiant.opengl.utils.RenderHandler;
-import com.serenegiant.uvccamera.BuildConfig;
 
 /**
  * Encode texture images as H.264 video

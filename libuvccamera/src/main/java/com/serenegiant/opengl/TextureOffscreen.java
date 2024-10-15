@@ -24,7 +24,8 @@ import android.opengl.GLUtils;
 import android.opengl.Matrix;
 import android.util.Log;
 
-import com.serenegiant.uvccamera.BuildConfig;
+import com.herohan.uvcapp.BuildConfig;
+
 
 /**
  * テクスチャへOpenGL|ESで描画するためのオフスクリーン描画クラス

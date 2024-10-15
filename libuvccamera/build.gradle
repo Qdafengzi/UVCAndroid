@@ -24,7 +24,8 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion versionCompiler
+    compileSdk versionCompiler
+    namespace "com.herohan.uvcapp"
 
     compileOptions {
         sourceCompatibility javaSourceCompatibility
@@ -58,6 +59,8 @@ android {
 //            path "src/main/jni/CMakeLists.txt"
 //        }
     }
+
+    ndkVersion "26.1.10909125"
 }
 
 dependencies {
@@ -70,18 +73,18 @@ dependencies {
     implementation 'cn.hutool:hutool-core:5.6.3'
 }
 
-ext {
-    libraryVersion = '1.0.7'
-    publishedGroupId = 'com.herohan'
-    artifact = 'UVCAndroid'
-    libraryDescription = 'Library and sample to access UVC camera on non-rooted Android device'
-    siteUrl = 'https://github.com/shiyinghan/UVCAndroid'
-    gitUrl = 'https://github.com/shiyinghan/UVCAndroid.git'
-    developerId = 'hansy'
-    developerName = 'hansy'
-    developerEmail = '1040762057@qq.com'
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-}
-
-apply from: "../publish_aar.gradle"
+//ext {
+//    libraryVersion = '1.0.7'
+//    publishedGroupId = 'com.herohan'
+//    artifact = 'UVCAndroid'
+//    libraryDescription = 'Library and sample to access UVC camera on non-rooted Android device'
+//    siteUrl = 'https://github.com/shiyinghan/UVCAndroid'
+//    gitUrl = 'https://github.com/shiyinghan/UVCAndroid.git'
+//    developerId = 'hansy'
+//    developerName = 'hansy'
+//    developerEmail = '1040762057@qq.com'
+//    licenseName = 'The Apache Software License, Version 2.0'
+//    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//}
+//
+//apply from: "../publish_aar.gradle"

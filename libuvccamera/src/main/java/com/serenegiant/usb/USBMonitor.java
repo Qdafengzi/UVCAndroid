@@ -40,8 +40,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseArray;
 
+import com.herohan.uvcapp.BuildConfig;
 import com.serenegiant.utils.HandlerThreadHandler;
-import com.serenegiant.uvccamera.BuildConfig;
 
 import java.io.UnsupportedEncodingException;
 import java.lang.ref.WeakReference;

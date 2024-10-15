@@ -12,9 +12,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.herohan.uvcapp.CameraHelper;
 import com.herohan.uvcapp.ICameraHelper;
+import com.serenegiant.usb.IButtonCallback;
+import com.serenegiant.usb.IFrameCallback;
 import com.serenegiant.usb.Size;
 import com.serenegiant.widget.AspectRatioSurfaceView;
 
+import java.nio.ByteBuffer;
 import java.util.List;
 
 public class BasicPreviewActivity extends AppCompatActivity implements View.OnClickListener {
@@ -22,8 +25,8 @@ public class BasicPreviewActivity extends AppCompatActivity implements View.OnCl
     private static final boolean DEBUG = true;
     private static final String TAG = BasicPreviewActivity.class.getSimpleName();
 
-    private static final int DEFAULT_WIDTH = 640;
-    private static final int DEFAULT_HEIGHT = 480;
+    private static final int DEFAULT_WIDTH = 3840;
+    private static final int DEFAULT_HEIGHT = 2880;
 
     private ICameraHelper mCameraHelper;
 
@@ -86,6 +89,12 @@ public class BasicPreviewActivity extends AppCompatActivity implements View.OnCl
         if (mCameraHelper == null) {
             mCameraHelper = new CameraHelper();
             mCameraHelper.setStateCallback(mStateListener);
+//            mCameraHelper.setFrameCallback(new IFrameCallback() {
+//                @Override
+//                public void onFrame(ByteBuffer frame) {
+//
+//                }
+//            },);
         }
     }
 

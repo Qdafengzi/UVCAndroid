@@ -34,9 +34,9 @@ import android.net.Uri;
 import android.os.Build;
 import android.util.Log;
 
+import com.herohan.uvcapp.BuildConfig;
 import com.serenegiant.utils.UVCUtils;
 import com.serenegiant.utils.UriHelper;
-import com.serenegiant.uvccamera.BuildConfig;
 
 
 public class MediaMuxerWrapper {
