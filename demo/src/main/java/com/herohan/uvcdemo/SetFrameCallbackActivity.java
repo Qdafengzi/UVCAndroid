@@ -232,7 +232,10 @@ public class SetFrameCallbackActivity extends AppCompatActivity implements View.
             // close camera
             if (mCameraHelper != null) {
                 mCameraHelper.closeCamera();
+
             }
+        }else if(v.getId() ==R.id.btnAspectRatio){
+            mCameraViewMain.setAspectRatio(9 / 16f);
         }
     }
 

@@ -1,5 +1,6 @@
 package com.herohan.uvcdemo;
 
+import android.graphics.Bitmap;
 import android.hardware.usb.UsbDevice;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +19,7 @@ import com.herohan.uvcdemo.fragment.CameraControlsDialogFragment;
 import com.herohan.uvcdemo.fragment.VideoFormatDialogFragment;
 import com.serenegiant.opengl.renderer.MirrorMode;
 import com.serenegiant.usb.Size;
+import com.serenegiant.usb.UVCCamera;
 import com.serenegiant.widget.AspectRatioSurfaceView;
 
 import java.util.List;
@@ -234,6 +236,15 @@ public class CustomPreviewActivity extends AppCompatActivity implements View.OnC
 
             mCameraHelper.addSurface(mCameraViewMain.getHolder().getSurface(), false);
             invalidateOptionsMenu();
+
+
+            mCameraHelper.setFrameCallback(frame -> {
+
+//
+                byte[] nv21 = new byte[frame.remaining()];
+                frame.get(nv21, 0, nv21.length);
+                Log.d(TAG,"数据来了:"+size.width +" "+size.height);
+            }, UVCCamera.PIXEL_FORMAT_RGBX);
         }
 
         @Override
